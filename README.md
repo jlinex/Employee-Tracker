@@ -12,3 +12,8 @@ AS A business owner, I WANT to be able to view and manage the departments, roles
 ## Links
 
 https://drive.google.com/file/d/151FK-fjoqp-KCQ7UieDOe1A08WzTkGra/view
+https://github.com/jlinex/Employee-Tracker
+
+## Resources
+
+https://www.youtube.com/watch?v=m9CQxR0AfiQ
