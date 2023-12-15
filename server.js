@@ -26,8 +26,7 @@ db.connect((err) => {
 
 
 function start() {
-  inquirer
-  .prompt([
+  inquirer.prompt([
     {
     type: 'list',
     message: 'What would you like todo?',
@@ -82,4 +81,109 @@ function viewAllDepartments() {
 
   start();
 };
-}
+
+function viewAllRoles() {
+  db.query('SELECT * FROM employee_role', (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log(result);
+  });
+
+  start();
+};
+
+function viewAllEmployees() {
+  db.query('SELECT * FROM employee', (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log(result);
+  });
+
+  start();
+};
+
+function addaDepartment() {
+  inquirer.prompt([
+      {
+        type: 'input',
+        message: 'Enter the new department name:',
+        name: 'departmentName',
+      },
+    ])
+    .then((answer => {
+      const departmentName = answer.departmentName;
+
+      db.query('INSERT INTO department (name) VALUES (?)', [departmentName], (err, result) => {
+        if (err) {
+          console.log(err);
+        }
+        console.log(`Department '${departmentName}' added successfully.`);
+        start();
+      });
+    }));
+  }
+
+function addaRole() {
+  inquirer.prompt([
+      {
+        type: 'input',
+        message: 'Enter the new employee_role:',
+        name: 'roleName',
+      },
+    ])
+    .then((answer => {
+      const roleNameName = answer.roleName;
+
+      db.query('INSERT INTO employee_role (name) VALUES (?)', [roleName], (err, result) => {
+        if (err) {
+          console.log(err);
+        }
+        console.log(`Role '${roleName}' added successfully.`);
+        start();
+      });
+    }));
+  }
+
+function addanEmployee() {
+  inquirer.prompt([
+      {
+        type: 'input',
+        message: 'Enter the new employee name:',
+        name: 'employeeName',
+      },
+    ])
+    .then((answer => {
+      const employeeName = answer.employeeName;
+
+      db.query('INSERT INTO employee (name) VALUES (?)', [employeeName], (err, result) => {
+        if (err) {
+          console.log(err);
+        }
+        console.log(`Employee'${employeeName}' added successfully.`);
+        start();
+      });
+    }));
+  }
+
+function updateEmployeeRole() {
+  inquirer.prompt([
+      {
+        type: 'input',
+        message: 'Enter the new employee role:',
+        name: 'employeeRole',
+      },
+    ])
+    .then((answer => {
+      const employeeRole = answer.employeeRole;
+
+      db.query('INSERT INTO employee role (name) VALUES (?)', [employeeRole], (err, result) => {
+        if (err) {
+          console.log(err);
+        }
+        console.log(`Employee'${employeeRole}' added successfully.`);
+        start();
+      });
+    }));
+  }}

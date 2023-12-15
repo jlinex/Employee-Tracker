@@ -1,5 +1,3 @@
-DROP DATABASE IF EXISTS employee_db;
-CREATE DATABASE employee_db;
 USE employee_db;
 
 CREATE TABLE employee (
@@ -25,4 +23,3 @@ CREATE TABLE department_id (
     PRIMARY KEY(id)
 );
 
-SELECT Math FROM department;
